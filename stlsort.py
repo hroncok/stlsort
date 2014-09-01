@@ -42,8 +42,10 @@ class STL:
         words = [s.strip() for s in f.read().split()]
         f.close()
 
-        if words[0] == 'solid' and words[1] == 'OpenSCAD_Model':
-            i = 2
+        if words[0] == 'solid':
+            i = 1
+            while words[i] != 'facet':
+                i = i+1
             while words[i] == 'facet':
                 norm = Normal(words[i + 2],  words[i + 3],  words[i + 4])
                 v1 = Vertex(words[i + 8],  words[i + 9],  words[i + 10])
@@ -54,12 +56,12 @@ class STL:
 
             self.facets.sort(key=Facet.key)
         else:
-            print("Not an OpenSCAD ascii STL file")
+            print("Not an ascii STL file")
             sys.exit(1)
 
     def write(self, fname):
         f = open(fname, "wt")
-        print('solid OpenSCAD_Model', file=f)
+        print('solid model', file=f)
         for facet in self.facets:
             print('  facet normal %s %s %s' %
                   (facet.normal.dx, facet.normal.dy, facet.normal.dz), file=f)
@@ -69,7 +71,7 @@ class STL:
                       (vertex.x, vertex.y, vertex.z), file=f)
             print('    endloop', file=f)
             print('  endfacet', file=f)
-        print('endsolid OpenSCAD_Model', file=f)
+        print('endsolid model', file=f)
         f.close()
 
 
