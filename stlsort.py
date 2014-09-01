@@ -80,7 +80,12 @@ def canonicalise(fname):
 
 def main():
     if len(sys.argv) == 2:
-        canonicalise(sys.argv[1])
+        try:
+            canonicalise(sys.argv[1])
+        except Exception as e:
+            sys.stderr.write(str(e))
+            sys.stderr.write('\n')
+            sys.exit(1)
     else:
         print("usage: stlsort file.stl")
         sys.exit(1)
