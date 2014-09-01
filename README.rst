@@ -1,6 +1,12 @@
 stlsort
 =======
 
+.. image:: https://badge.fury.io/py/stlsort.svg
+    :target: http://badge.fury.io/py/stlsort
+
+.. image:: https://pypip.in/d/stlsort/badge.png
+        :target: https://pypi.python.org/pypi/stlsort
+
 Some tools such as OpenSCAD produce randomly ordered STL files so source control like git can't tell if they have changed or not.
 This tool orders each triangle to start with the lowest vertex first (comparing x, then y, then z).
 It then sorts the triangles to start with the one with the lowest vertices first (comparing first vertex, second, then third).
