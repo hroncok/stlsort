@@ -14,6 +14,7 @@ setup(
     maintainer_email='Miro Hrončok',
     license='GPLv2',
     packages=find_packages(),
+    entry_points={'console_scripts': ['stlsort=stlsort:main']},
     classifiers=[
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
