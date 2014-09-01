@@ -81,15 +81,19 @@ def canonicalise(fname):
 
 
 def main():
-    if len(sys.argv) == 2:
-        try:
-            canonicalise(sys.argv[1])
-        except Exception as e:
-            sys.stderr.write(str(e))
-            sys.stderr.write('\n')
+    if len(sys.argv) >= 2:
+        error = False
+        for stl in sys.argv[1:]:
+            try:
+                canonicalise(stl)
+            except Exception as e:
+                sys.stderr.write(str(e))
+                sys.stderr.write('\n')
+                error = True
+        if error:
             sys.exit(1)
     else:
-        print("usage: stlsort file.stl")
+        print("usage: stlsort file.stl [file2.stl [...]]")
         sys.exit(1)
 
 if __name__ == '__main__':
