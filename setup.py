@@ -11,7 +11,7 @@ setup(
     author='nop head',
     author_email='nop.head@gmail.com',
     maintainer='Miro Hrončok',
-    maintainer_email='Miro Hrončok',
+    maintainer_email='miro@hroncok.cz',
     url='https://github.com/hroncok/stlsort',
     license='GPLv2',
     packages=find_packages(),
