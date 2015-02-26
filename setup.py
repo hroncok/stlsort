@@ -14,7 +14,7 @@ setup(
     maintainer_email='miro@hroncok.cz',
     url='https://github.com/hroncok/stlsort',
     license='GPLv2',
-    packages=find_packages(),
+    py_modules=['stlsort'],
     entry_points={'console_scripts': ['stlsort=stlsort:main']},
     classifiers=[
         'Development Status :: 3 - Alpha',
