@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='stlsort',
-    version='0.0.1',
+    version='0.0.2',
     description='Sort ASCII STL files for better version control',
     long_description=''.join(open('README.rst').readlines()),
     keywords='STL, mesh, 3D, sort, git',
